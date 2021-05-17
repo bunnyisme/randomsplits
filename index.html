@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>randomsplits</title>
+</head>
+<body>
+
+<form>
+  a: <input type="number" name="a" id="a"><br>
+  b: <input type="number" name="b" id="b"><br>
+  <button onclick="rs()">Add</button>
+</form>
+<script>
+  function shuffle(array) {
+    for (let i = array.length - 1; i > 0; i--) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [array[i], array[j]] = [array[j], array[i]];
+    }
+  }
+
+let rs = () => {
+  var num = document.getElementById('a').value;
+  var parts = document.getElementById('b').value;
+  let splits = [];
+  for (let i = 0; i < parts-1; i++){
+    let rand = Math.floor(Math.random() * (num))
+    splits.push(rand);
+    num -= rand;
+  }
+  splits.push(num)
+  shuffle(splits);
+  return splits;
+}
+</script>
+  
+  </body>
+</html>
