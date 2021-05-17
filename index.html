@@ -4,10 +4,10 @@
 <title>randomsplits</title>
 </head>
 <body>
-
+  <h1> low effort random splitting site </h1>
 <form>
-  a: <input type="number" name="a" id="a"><br>
-  b: <input type="number" name="b" id="b"><br>
+  Number: <input type="number" name="a" id="a"><br>
+  Splits: <input type="number" name="b" id="b"><br>
   <button onclick="rs()">Add</button>
 </form>
 <script>
@@ -29,7 +29,7 @@ let rs = () => {
   }
   splits.push(num)
   shuffle(splits);
-  return splits;
+  alert(splits.join(", "));
 }
 </script>
   
